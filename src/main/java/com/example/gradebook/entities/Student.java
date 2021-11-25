@@ -1,4 +1,4 @@
-package com.example.gradebook.domain;
+package com.example.gradebook.entities;
 
 import lombok.Data;
 
@@ -14,6 +14,8 @@ public class Student {
     @Id
     @GeneratedValue
     private Long id;
+
     private String name;
+
     private String lastName;
 }

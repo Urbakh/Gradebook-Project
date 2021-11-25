@@ -1,4 +1,4 @@
-package com.example.gradebook.domain;
+package com.example.gradebook.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -16,9 +16,14 @@ public class Journal {
     @Id
     @GeneratedValue
     private Long id;
+
     private String schoolItems;
+
     private Integer grade;
+
     @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate date;
+
     private Long studentId;
+
 }

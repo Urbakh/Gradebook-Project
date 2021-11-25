@@ -1,7 +1,7 @@
 package com.example.gradebook.services;
 
-import com.example.gradebook.domain.Journal;
-import com.example.gradebook.repository.JournalRepository;
+import com.example.gradebook.entities.Journal;
+import com.example.gradebook.dao.JournalDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -12,30 +12,30 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class JournalService {
-    private final JournalRepository journalRepository;
+    private final JournalDao journalDao;
 
     public List<Journal> findAll() {
-        return (List<Journal>) journalRepository.findAll();
+        return (List<Journal>) journalDao.findAll();
     }
 
     public Optional<Journal> getOne(Long id) {
-        return journalRepository.findById(id);
+        return journalDao.findById(id);
     }
 
     public Iterable<Journal> listByStudentId(Long studentId) {
-        return journalRepository.findAllByStudentId(studentId);
+        return journalDao.findAllByStudentId(studentId);
     }
 
     public Journal create(Journal journal) {
-        return journalRepository.save(journal);
+        return journalDao.save(journal);
     }
 
     public Journal update(Journal journalFromDb, Journal journal) {
         BeanUtils.copyProperties(journal, journalFromDb,"id");
-        return journalRepository.save(journalFromDb);
+        return journalDao.save(journalFromDb);
     }
 
     public void delete(Journal journal) {
-        journalRepository.delete(journal);
+        journalDao.delete(journal);
     }
 }

@@ -1,9 +1,9 @@
 package com.example.gradebook.services;
 
-import com.example.gradebook.domain.Journal;
-import com.example.gradebook.domain.Student;
-import com.example.gradebook.repository.JournalRepository;
-import com.example.gradebook.repository.StudentRepository;
+import com.example.gradebook.entities.Journal;
+import com.example.gradebook.entities.Student;
+import com.example.gradebook.dao.JournalDao;
+import com.example.gradebook.dao.StudentDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -15,31 +15,31 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class StudentService {
-    private final JournalRepository journalRepository;
-    private final StudentRepository studentRepository;
+    private final JournalDao journalDao;
+    private final StudentDao studentDao;
 
     public List<Student> findAll() {
-        return (List<Student>) studentRepository.findAll();
+        return (List<Student>) studentDao.findAll();
     }
 
     public Optional<Student> getOne(Long studentId) {
-        return studentRepository.findById(studentId);
+        return studentDao.findById(studentId);
     }
 
     public Student create(Student student) {
-        return studentRepository.save(student);
+        return studentDao.save(student);
     }
 
     public Student update(Student studentFromDb, Student student) {
         BeanUtils.copyProperties(student, studentFromDb,"id");
-        return studentRepository.save(studentFromDb);
+        return studentDao.save(studentFromDb);
     }
 
     @Transactional
     public void delete(Student student) {
-        for (Journal journalRepo : journalRepository.findAllByStudentId(student.getId())) {
-            journalRepository.delete(journalRepo);
+        for (Journal journalRepo : journalDao.findAllByStudentId(student.getId())) {
+            journalDao.delete(journalRepo);
         }
-        studentRepository.delete(student);
+        studentDao.delete(student);
     }
 }

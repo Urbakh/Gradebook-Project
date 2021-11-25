@@ -1,6 +1,6 @@
 package com.example.gradebook.controller;
 
-import com.example.gradebook.domain.Journal;
+import com.example.gradebook.entities.Journal;
 import com.example.gradebook.services.JournalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
