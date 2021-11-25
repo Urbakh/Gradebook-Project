@@ -25,7 +25,7 @@ API:
     }
 ]
 
-GET/student/{id} - получить студента по id:
+`GET/student/{id}` - получить студента по id:
 
 {
     "id": 21,
@@ -33,7 +33,7 @@ GET/student/{id} - получить студента по id:
     "lastName": "Сидоров"
 }
 
-POST/student - создать в базе студента:
+`POST/student` - создать в базе студента:
 
 Принимает JSON:
 
@@ -50,7 +50,7 @@ POST/student - создать в базе студента:
     "lastName": "Иванов"
 }
 
-PUT/student/{id} - изменение данных студента по id:
+`PUT/student/{id}` - изменение данных студента по id:
 
 Принимает JSON:
 
@@ -67,12 +67,12 @@ PUT/student/{id} - изменение данных студента по id:
     "lastName": "Иванов"
 }
 
-DELETE/student/{id} - удалить данные о студенте по id.
+`DELETE/student/{id}` - удалить данные о студенте по id.
 
 
 Для журнала:
 
-GET/journal - возвращает список журналов:
+`GET/journal` - возвращает список журналов:
 
 [
     {
@@ -98,7 +98,7 @@ GET/journal - возвращает список журналов:
     }
 ]    
 
-GET/journal/{id} - получить журнал по id:
+`GET/journal/{id}` - получить журнал по id:
 
 {
     "id": 27,
@@ -108,7 +108,7 @@ GET/journal/{id} - получить журнал по id:
     "studentId": 21
 }
 
-GET/journal/student/{studentId} - получить все записи в журнале по id студента:
+`GET/journal/student/{studentId}` - получить все записи в журнале по id студента:
 
 [
     {
@@ -134,7 +134,7 @@ GET/journal/student/{studentId} - получить все записи в жур
     }
 ]
 
-POST/journal - создать в базе журнал:
+`POST/journal` - создать в базе журнал:
 
 Принимает JSON:
 
@@ -155,7 +155,7 @@ POST/journal - создать в базе журнал:
     "studentId": 21
 }
 
-PUT/journal/{id} - изменение данных журнала по id:
+`PUT/journal/{id}` - изменение данных журнала по id:
 
 Принимает JSON:
 
@@ -176,7 +176,7 @@ PUT/journal/{id} - изменение данных журнала по id:
     "studentId": 21
 }
 
-DELETE/journal/{id} - удалить данные журнала по id.
+`DELETE/journal/{id}` - удалить данные журнала по id.
 
 
 P.S. 
