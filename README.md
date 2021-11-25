@@ -53,7 +53,7 @@ API:
 ```
 
 `PUT/student/{id}` - изменение данных студента по id:
-
+```json
 Принимает JSON:
 
 {
@@ -68,6 +68,7 @@ API:
     "name": "Дмитрий",
     "lastName": "Иванов"
 }
+```
 
 `DELETE/student/{id}` - удалить данные о студенте по id.
 
@@ -75,7 +76,7 @@ API:
 Для журнала:
 
 `GET/journal` - возвращает список журналов:
-
+```json
 [
     {
         "id": 25,
@@ -98,10 +99,11 @@ API:
         "date": "25.11.2021",
         "studentId": 21
     }
-]    
+] 
+```
 
 `GET/journal/{id}` - получить журнал по id:
-
+```json
 {
     "id": 27,
     "schoolItems": "Музыка",
@@ -109,9 +111,10 @@ API:
     "date": "25.11.2021",
     "studentId": 21
 }
+```
 
 `GET/journal/student/{studentId}` - получить все записи в журнале по id студента:
-
+```json
 [
     {
         "id": 25,
@@ -135,9 +138,10 @@ API:
         "studentId": 21
     }
 ]
+```
 
 `POST/journal` - создать в базе журнал:
-
+```json
 Принимает JSON:
 
 {
@@ -156,9 +160,10 @@ API:
     "date": "25.11.2021",
     "studentId": 21
 }
+```
 
 `PUT/journal/{id}` - изменение данных журнала по id:
-
+```json
 Принимает JSON:
 
 {
@@ -177,6 +182,7 @@ API:
     "date": "25.11.2021",
     "studentId": 21
 }
+```
 
 `DELETE/journal/{id}` - удалить данные журнала по id.
 
