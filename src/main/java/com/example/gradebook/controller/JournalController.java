@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("journal")
+@RequestMapping("/journal")
 public class JournalController {
     private final JournalService journalService;
 

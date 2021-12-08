@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("student")
+@RequestMapping("/student")
 public class StudentController {
     private final StudentService studentService;
 
@@ -23,6 +23,11 @@ public class StudentController {
     @GetMapping("{id}")
     public Optional<Student> getOne(@PathVariable("id") Long studentId) {
         return studentService.getOne(studentId);
+    }
+
+    @GetMapping("/name")
+    public Student getStudentName(@PathVariable("name") String name) {
+        return studentService.getStudentName(name);
     }
 
     @PostMapping

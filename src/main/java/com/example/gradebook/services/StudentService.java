@@ -26,6 +26,10 @@ public class StudentService {
         return studentDao.findById(studentId);
     }
 
+    public Student getStudentName(String name) {
+        return studentDao.findByName(name);
+    }
+
     public Student create(Student student) {
         return studentDao.save(student);
     }
